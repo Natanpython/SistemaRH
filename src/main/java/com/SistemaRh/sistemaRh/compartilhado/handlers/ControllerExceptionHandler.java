@@ -3,6 +3,7 @@ package com.SistemaRh.sistemaRh.compartilhado.handlers;
 import com.SistemaRh.sistemaRh.compartilhado.dto.CustomError;
 import com.SistemaRh.sistemaRh.compartilhado.dto.ValidationError;
 import com.SistemaRh.sistemaRh.compartilhado.exceptions.DatabaseException;
+import com.SistemaRh.sistemaRh.compartilhado.exceptions.DisciplinaEmUsoException;
 import com.SistemaRh.sistemaRh.compartilhado.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -17,6 +18,13 @@ import java.time.Instant;
 
 @ControllerAdvice
 public class ControllerExceptionHandler {
+    @ExceptionHandler(DisciplinaEmUsoException.class)
+    public ResponseEntity<CustomError> disciplinaEmUso(DisciplinaEmUsoException e, HttpServletRequest request) {
+        HttpStatus status = HttpStatus.CONFLICT;
+        CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
+        return ResponseEntity.status(status).body(err);
+    }
+
     @ExceptionHandler(ResourceNotFoundException.class)
 
     public ResponseEntity<CustomError> resourceNotFound(ResourceNotFoundException e, HttpServletRequest request) {

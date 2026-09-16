@@ -36,6 +36,14 @@ INSERT INTO tb_disciplina (nome, ativo, criado_em) VALUES ('Portugues', TRUE, TI
 INSERT INTO tb_disciplina (nome, ativo, criado_em) VALUES ('Historia', TRUE, TIMESTAMP '2026-09-09 12:00:00');
 INSERT INTO tb_disciplina (nome, ativo, criado_em) VALUES ('Geografia', TRUE, TIMESTAMP '2026-09-09 12:00:00');
 INSERT INTO tb_disciplina (nome, ativo, criado_em) VALUES ('Ciencias', TRUE, TIMESTAMP '2026-09-09 12:00:00');
+INSERT INTO tb_disciplina (nome, ativo, criado_em) VALUES ('Ingles', TRUE, TIMESTAMP '2026-09-16 12:00:00');
+INSERT INTO tb_disciplina (nome, ativo, criado_em) VALUES ('Educacao Fisica', TRUE, TIMESTAMP '2026-09-16 12:00:00');
+INSERT INTO tb_disciplina (nome, ativo, criado_em) VALUES ('Artes', TRUE, TIMESTAMP '2026-09-16 12:00:00');
+INSERT INTO tb_disciplina (nome, ativo, criado_em) VALUES ('Fisica', TRUE, TIMESTAMP '2026-09-16 12:00:00');
+INSERT INTO tb_disciplina (nome, ativo, criado_em) VALUES ('Quimica', TRUE, TIMESTAMP '2026-09-16 12:00:00');
+INSERT INTO tb_disciplina (nome, ativo, criado_em) VALUES ('Biologia', TRUE, TIMESTAMP '2026-09-16 12:00:00');
+INSERT INTO tb_disciplina (nome, ativo, criado_em) VALUES ('Filosofia', FALSE, TIMESTAMP '2026-09-16 12:00:00');
+INSERT INTO tb_disciplina (nome, ativo, criado_em) VALUES ('Sociologia', FALSE, TIMESTAMP '2026-09-16 12:00:00');
 
 INSERT INTO tb_professor (nome, cpf, matricula, carga_horaria, formacao, pos_graduacao, contato, email, criado_em) VALUES ('Ana Oliveira', '00000000001', 'PROF001', 40, 'Licenciatura em Matematica', 'Educacao Matematica', '00000000001', 'ana.oliveira@example.com', TIMESTAMP '2026-09-09 12:00:00');
 INSERT INTO tb_professor (nome, cpf, matricula, carga_horaria, formacao, pos_graduacao, contato, email, criado_em) VALUES ('Bruno Santos', '00000000002', 'PROF002', 30, 'Licenciatura em Letras', 'Literatura Brasileira', '00000000002', 'bruno.santos@example.com', TIMESTAMP '2026-09-09 12:00:00');
@@ -43,7 +51,7 @@ INSERT INTO tb_professor (nome, cpf, matricula, carga_horaria, formacao, pos_gra
 INSERT INTO tb_professor (nome, cpf, matricula, carga_horaria, formacao, pos_graduacao, contato, email, criado_em) VALUES ('Diego Lima', '00000000004', 'PROF004', 20, 'Licenciatura em Ciencias Biologicas', 'Ensino de Ciencias', '00000000004', 'diego.lima@example.com', TIMESTAMP '2026-09-09 12:00:00');
 INSERT INTO tb_professor (nome, cpf, matricula, carga_horaria, formacao, pos_graduacao, contato, email, criado_em) VALUES ('Elisa Costa', '00000000005', 'PROF005', 40, 'Licenciatura em Matematica e Ciencias', NULL, '00000000005', 'elisa.costa@example.com', TIMESTAMP '2026-09-09 12:00:00');
 
--- IDs gerados no banco vazio: professores e disciplinas de 1 a 5.
+-- Associacoes com professores de 1 a 5 e as cinco primeiras disciplinas no banco vazio.
 INSERT INTO tb_professor_disciplina (professor_id, disciplina_id) VALUES (1, 1);
 INSERT INTO tb_professor_disciplina (professor_id, disciplina_id) VALUES (2, 2);
 INSERT INTO tb_professor_disciplina (professor_id, disciplina_id) VALUES (3, 3);
